@@ -1,0 +1,47 @@
+{
+    "name": "EmergencyContact",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Full name of emergency contact"
+      },
+      "phone": {
+        "type": "string",
+        "description": "Phone number"
+      },
+      "relationship": {
+        "type": "string",
+        "enum": [
+          "family",
+          "friend",
+          "partner",
+          "colleague",
+          "neighbor",
+          "doctor",
+          "other"
+        ],
+        "description": "Relationship to user"
+      },
+      "is_primary": {
+        "type": "boolean",
+        "default": false,
+        "description": "Primary emergency contact"
+      },
+      "notify_sms": {
+        "type": "boolean",
+        "default": true,
+        "description": "Send SMS alerts"
+      },
+      "notify_email": {
+        "type": "boolean",
+        "default": true,
+        "description": "Send email alerts"
+      }
+    },
+    "required": [
+      "name",
+      "phone",
+      "relationship"
+    ]
+  }

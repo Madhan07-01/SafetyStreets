@@ -1,0 +1,3 @@
+@echo off
+echo Starting SafeStreets development server...
+call npx vite

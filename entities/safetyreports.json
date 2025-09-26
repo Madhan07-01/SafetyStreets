@@ -1,0 +1,63 @@
+{
+    "name": "SafetyReport",
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "Location address or description"
+      },
+      "latitude": {
+        "type": "number",
+        "description": "GPS latitude"
+      },
+      "longitude": {
+        "type": "number",
+        "description": "GPS longitude"
+      },
+      "safety_rating": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5,
+        "description": "Safety rating 1-5 (1=very unsafe, 5=very safe)"
+      },
+      "report_type": {
+        "type": "string",
+        "enum": [
+          "incident",
+          "safe_zone",
+          "poor_lighting",
+          "suspicious_activity",
+          "police_presence",
+          "well_lit",
+          "busy_area"
+        ],
+        "description": "Type of safety report"
+      },
+      "description": {
+        "type": "string",
+        "description": "Detailed description of the safety concern or positive note"
+      },
+      "time_of_day": {
+        "type": "string",
+        "enum": [
+          "morning",
+          "afternoon",
+          "evening",
+          "night",
+          "late_night"
+        ],
+        "description": "Time when the report was observed"
+      },
+      "verified": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether report has been verified by other users"
+      }
+    },
+    "required": [
+      "location",
+      "safety_rating",
+      "report_type",
+      "time_of_day"
+    ]
+  }

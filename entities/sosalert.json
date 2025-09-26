@@ -1,0 +1,58 @@
+{
+    "name": "SOSAlert",
+    "type": "object",
+    "properties": {
+      "alert_type": {
+        "type": "string",
+        "enum": [
+          "manual_sos",
+          "voice_activated",
+          "panic_button",
+          "safe_arrival"
+        ],
+        "description": "Type of SOS alert triggered"
+      },
+      "location": {
+        "type": "string",
+        "description": "Location address when alert was triggered"
+      },
+      "latitude": {
+        "type": "number",
+        "description": "GPS latitude when alert was triggered"
+      },
+      "longitude": {
+        "type": "number",
+        "description": "GPS longitude when alert was triggered"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "resolved",
+          "false_alarm"
+        ],
+        "default": "active",
+        "description": "Current status of the alert"
+      },
+      "message": {
+        "type": "string",
+        "description": "Custom message sent with alert"
+      },
+      "contacts_notified": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "List of contact IDs that were notified"
+      },
+      "resolved_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "When the alert was resolved"
+      }
+    },
+    "required": [
+      "alert_type",
+      "location"
+    ]
+  }

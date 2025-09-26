@@ -1,0 +1,1 @@
+export { default } from '../dashboard/emergency/sosbutton.jsx';
